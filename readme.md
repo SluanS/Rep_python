@@ -15,7 +15,6 @@
 ## 🖥️interface
 #### Visão geral da página
 ![imagem geral](imgs/visão_geral.png)
-**Campo de inserção de dados**
 
 ![Campos de inserção](imgs/Campos_inserção.png)
 
