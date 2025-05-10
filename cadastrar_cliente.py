@@ -23,9 +23,11 @@ def adicionar_clientes():
     e = telefone_entrada.get()
     l = email_entrada.get()
     if len(ultimo_id) > 0: #Verifica se já foi inserido um primeiro registro no banco de dados
-        cursor.execute(f"insert into cadastros values({ultimo_id[0][0] + 1},'{n}','{e}','{l}')")
+        dados = (ultimo_id[0][0] + 1,n,e,l)
+        cursor.execute("Insert into cadastros values(?,?,?,?)",dados)
     else:
-        cursor.execute(f"Insert into cadastros values({1},'{n}','{e}','{l}')")
+        dados = (1,n,e,l)
+        cursor.execute("Insert into cadastros values(?,?,?,?)", dados)
     conn.commit()
     limpeza() #Chama a função que limpará as caixas de entrada e o Treeview
 
